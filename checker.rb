@@ -27,7 +27,7 @@ class Piece
     @pos = target
   end
   
-  def one_jump(target)
+  def perform_jump(target)
     raise "Invalid move!" if @board[mid_loc].nil?
     raise "Invalid move!" if @board[target].nil? || @board[target].color == @color
     
@@ -39,10 +39,6 @@ class Piece
     @board[@pos] = nil
     @pos = target
     @board[mid_loc] = nil
-  end
-  
-  def perform_jump
-    
   end
   
   def diffs
